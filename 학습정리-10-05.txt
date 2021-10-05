@@ -1,0 +1,151 @@
+1. 리터럴이란?
+자료형을 기반으로 표현이 되는 상수를 의미한다
+상수는 변하지 않는 수로
+int num1 = 5 +7;
+double num2 = 3.3 + 4.5;
+
+*연산을 하기 위해 5, 7
+3.3, 4.5의 메모리 공간을 잡는다 -> 이 때문에 변하지 않는 수 상수 즉 
+자료형을 기번으로 표현이 되는 상수 리터럴이라고 한다
+
+[여기서 5,7 정수형 리터럴   3.3, 4.5 실수형 리터럴이다]
+       
+
+2. 아래의 내용이 에러가 나는 이유와 수정 방법은?
+System.out.println(3147483647 + 3147483648); //에러남
+
+
+JVM은 32비트로 정수는 기본으로 32비트인 int형으로 잡는다
+int의 데이터 범위는 21억으로  연산을 하게되면 21억의 범위를 넘어 컴파일 에러가 발생한다
+
+이를 수정하기 위해서
+L을 붙여 long형으로 표현해 달라는 요청을 해야 한다
+
+System.out.println(3147483647L + 3147483648L);
+
+
+3. 자동 형변환과 명시적 형변환에 대하여 설명하시오.
+
+두 피연산자의 자료형이 일치해야 연산을 진행할 수 있다
+자동 형 변환이란 자료형의 크기가 큰 방향으로 형 변환이 일어나는 것이다
+* 이때 자료형의 크기에 상관없이 정수 자료형보다 실수 자료형을 우선한다
+WHY? 실수 자료형이 표현 범위가 넓기 때문에 
+
+byte -> short ->int -> long -> float -> double
+           char  ->
+명시적 형 변환이란 
+자동 형 변환 규칙에 부합하지 않지만 형 변환이 필요한 경우라면 명시적 형 변환을 진행한다
+명시적 형 변환이란 강제적 형 변환이라고도 한다
+
+ex)
+short num1 = 1;
+short num2 = 2;
+short num3 = (short) (num1 +num2);
+
+
+
+4.아래의 에러가 나는 이유를 설명하고 수정 하시오. (형 변환으로 접근)
+
+int a = 3;
+int b = 4;
+	
+double result = a / b;
+System.out.println(result);
+
+
+int a =3;  int b = 4; 라고 선언을 했기 때문에
+a/b는 0.75로 실수이지만 cpu는 데이터 타입을 int 로 잡는다
+즉 데이터 타입이 다르기 때문에 컴파일 에러가 발생하고
+
+
+5. 이스케이프 시퀀스의 종류를 나열하고 기능을 설명하시오.
+이스케이프 시퀀스란 화면상의 어떠한 상황이나 상태를 표현하기 위해
+약속된 문자이다
+
+
+
+6. 아래의 출력 결과를 확인하고, 130이 나오는 이유를 설명
+System.out.println('A');       -> A
+System.out.println('A' + 'A');       -> 130
+
+int 이하의 데이터 타입에 대해서는 int로 형 변환이 일어난다
+연산을 하게되면 결과 값에 대한 방을 int로 잡기 때문에
+65 + 65인  130을 출력한다
+
+
+7. 결합 방향과 우선순위에 대하여 설명하시오.
+
+결합방향 ->
+
+연산자 우선순위는 연산자를 실행하는 순서를 결정한다. 
+즉 우선순위가 높은 연산자가 먼저 실행
+
+8. "1초과 100미만인가?"를 코딩으로 표현하면? (체크해보기)
+int num1 = 1;
+boolean result;
+
+result = ( 1< num1) && (num1 < 100);
+System.out.println("1초과 100미만인가?" + result);
+
+9. "2의 배수 또는 3의 배수?" 를 코딩으로 표현 하면?
+
+int num2 = 100;
+boolean result;
+
+result = ( (num2 % 2) ==0 ) || ((num2 %3) == 0);
+System.out.println("2또는 3의 배수인가?" + result);
+
+10. 아래의 프린트 결과를 예측해 보고, 코딩 후 결과를 확인 하시오.
+class SCE {
+	public static void main(String[] args) {
+		int num1 = 0;
+		int num2 = 0;
+		boolean result;    
+
+		result = ((num1 += 10) < 0) && ((num2 += 10) > 0);
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2);  
+	
+    result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2);
+	}
+}
+
+힌트:
+
+11.아래를 프로그래밍 하시오.
+국어 : 50
+영어 : 70
+수학 : 95
+
+총점과 평균을 구하시오.
+-단 평균은 소숫점 까지 나오도록 하시오
+
+public static void main(String[] args) {
+		int kor = 50;
+		int math = 95;
+		int eng = 70;
+		int sum = kor + math + eng;
+		
+		System.out.println(sum);
+		
+		double avg = (double) sum / 3;
+		System.out.println(avg);
+	}
+
+}
+
+
+
+
+
+
+*32비트 시스템에서 메모리 최대용량 8 GB
+메모리에 주소가 있다
+한 방에 보낼 수 있는게 2의 32승이기때문에
+8GB이다
+
+
