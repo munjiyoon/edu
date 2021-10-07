@@ -1,0 +1,245 @@
+1.  swithc 문에서 아래의 프로그래밍을 짜시오.
+
+1234 월 봄입니다.출력
+5678 월 여름입니다.출력
+9 10 11 12 월 겨울 입니다. 출력
+
+public class Month {
+
+	public static void main(String[] args) {
+		
+		int month = 0;		
+		
+		switch (month) {
+		case 1: case 2: case 3: case 4:
+			System.out.println("봄입니다");
+			break;
+		case 5 : case 6: case 7: case 8:
+			System.out.println("여름입니다");
+			break;
+		case 9 : case 10: case 11: case 12:
+			System.out.println("겨울입니다");
+			break;
+		default:
+			System.out.println("잘못입력하셨습니다");
+		
+		}
+
+	}
+
+}
+
+
+
+2. 
+int num = -10 을 할당 후 해당 정수에 대한 절댓값을 출력하는 프로그램을 작성하시오.
+절대값은 양수 입니다.
+
+
+힌트
+넘 값을 체크해
+음수이면 마이너스를 곱해서
+그렇게 출력하면 절대값이 되지 않을까?
+
+public class AbsoluteValue {
+
+	public static void main(String[] args) {
+	
+	int num = -10;
+	if (num < 0) {
+		 num = num * -1;
+	} else {
+		num = num * 1;
+	}
+	System.out.println(num);	
+	}
+}
+
+
+
+3. while 문과 do while 문의 차이는 무엇인가요?
+
+while 문은 먼저 조건을 검사해서 조건이 true 시 반복영역을 실행한다 하지만
+do while은 반드시 안에 내용을 한번을 실행을 하고 조건을 검사한다
+*while 문은 조건부터 검사해서 반복영역을 실행을 하지 않을 수도 있다
+; 주의 할것
+
+문법은 다음과 같다
+
+while (반복조건) {
+     반복영역
+}
+
+do { 
+  반복영역
+} while (반복조건);
+
+
+
+4. 아래에서 for 문이 실행 되는 순서를 정리하시오.
+
+for (i = 1; i <= 1000; i++){
+    sum = sum +i
+}
+
+① 초기화 구문 
+② 반복조건
+③  반복영역
+ 4. 증감 (반복을 탈출하기 위해)
+5.  반복영역
+6. 반복조건이 false가 될때까지 반복! 
+
+*for 문에 들어가는 변수명은 관습적으로 i 로 함
+
+5. 구구단 6단을 출력 하는 프로그램을 짜시오.
+
+
+public class Dan {
+
+	public static void main(String[] args) {
+		
+		int dan = 6;
+		
+		for ( int i = 1; i <= 9; i++) {
+			
+			System.out.println(i + "x" + dan + "=" + (i *dan));
+			
+		}
+
+	}
+
+}
+
+
+
+6. 1부터 10000 까지의 합을 구하는 프로그램을 짜시오.
+
+public class Sum10000 {
+
+	public static void main(String[] args) {
+		int sum = 0; //합을 담아둘 변수 선언
+		
+		for (int i = 1; i <= 10000; i++) {
+			sum = sum + i;
+			System.out.println(sum);
+		}
+
+	}
+
+}
+
+
+7. 1부터 10000 까지의 숫자중 홀수 의 합을 구하는 프로그램을 짜시오.
+
+public class Sum10000 {
+
+	public static void main(String[] args) {
+		int sum = 0; // 합을 담아둘 변수 선언
+		
+		for (int i = 1; i <= 10000; i++) {
+			if( i % 2 == 1 ) { 
+			sum = sum + i;
+			System.out.println(sum);
+			}
+		}
+	}
+}
+
+
+8. break 와 continue에 대하여 설명하시오.
+
+break = 조건이 맞을 경우 반복문 중단
+
+continue = 조건이 맞을 경우 continue 이하의 문장들을 그냥 넘어간 뒤
+다시 반복문으로 돌아가 반복을 계속한다
+ 
+즉 그 경우의 반복문은 넘어가고 남은 소스(?) 계속 수행
+
+
+
+9. 1과 100 사이의 숫자중 5의 배수이자 7의 배수의 첫번재 수는(프로그램밍 하시오)
+public class Multiple {
+
+	public static void main(String[] args) {
+		// 5의 배수이자 7의 배수
+		int i;
+		for( i = 1; i <= 100; i++) {
+			if((( i % 5) == 0) && ((i % 7) == 0)){
+				break;
+				
+			}
+		}
+			System.out.println("첫번째 수는" + i + "입니다");
+		
+		
+	}
+
+}
+
+
+
+10. 1과 10000 사이의 숫자중 5의 배수이자 7의  배수인 수의 갯수는 (프로그램밍 하시오)
+
+
+public class Multiple {
+
+	public static void main(String[] args) {
+		// 5의 배수이자 7의 배수 세기
+		int i;
+		
+		int count = 0;
+		for( i = 1; i <= 10000; i++) {
+			if((( i % 5) == 0) && ((i % 7) == 0)){
+				count ++;
+				
+				
+			}
+		}
+			System.out.println("개수는" + count + "개 입니다");
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+++
+5. 아래의 출력값을 예측하시오.
+class AssignSteResult {
+	public static void main(String[] args) {
+		int num1 = 10, num2 = 20, num3 = 30;
+		num1 = num2 = num3;    
+
+		/*
+      = 연산자는 결합 방향이 오른쪽에서 왼쪽으로 진행된다.  ->
+      따라서 위의 문장은 다음과 같다. 
+      num1 = (num2 = num3);        
+    */
+    
+    System.out.println(num1);	
+    System.out.println(num2);
+    System.out.println(num3);
+	}
+
+
+출력 : 30
+         30
+         30
+
+연산에는 우선순위가 있고 결합방향이 있음
+연산자 우선순위가 같을 경우에는 오른쪽에서 왼쪽으로 갈건지
+왼쪽에서 오른쪽으로 갈건지 결합 방향을 정해야 한다
+
+대입연산자 = 의 경우 결합 방향은 <- 이다
+즉 30, 30, 30이 나온다
+
