@@ -1,0 +1,246 @@
+1. 반복문 무한루프 만드는 세가지 방법은?
+for( ; ; ) {                   while (true) {                    do {
+                                                             
+}                               }                                  } while(true)
+
+2. 아래와 같이 출력 되도록 프로그래밍 하시오.(//반복문 사용 할 필요 없음)
+(for문 사용하는거 아님)
+126500 의 금액을 한국 화폐로 바꾸었을 때 각각 몇 개의 화폐가 필요한지 계산해서 출력하기
+예) int 126500;
+오만원 : 2장	
+만원:    2장
+오천원 :1장
+천원: 1
+오백원: 1개
+백원: 0개
+
+
+//65000 
+60000 / 50000 몫 1 나머지 15000
+몫이 장수 나머지 15000을 / 10000
+해당 몫은 변수로 선언
+최종적으로 몇장 
+몫하고 나머지를 이용해서 ㅎ ㅎ
+
+
+3.구구단 출력 하시오.
+public class p1 {
+
+	public static void main(String[] args) {
+		for(int i = 1; i <= 9; i++) {
+			for(int j = 1; j <= 9; j++) {
+				System.out.println(i + "x" + j +"=" + (i *j));
+			}
+		}
+	}
+}
+
+
+
+
+4.구구단 짝수단 출력 하시오.
+public class p1 {
+
+	public static void main(String[] args) {
+		for(int i = 1; i <= 9; i++) {
+			for(int j = 1; j <= 9; j++) {
+				if((i % 2) == 0) {
+				System.out.println(i + "x" + j +"=" + (i *j));
+				}
+			}
+		}
+	}
+}
+
+5. 3의 배수인 단(3,6,9)만 출력 하시오.
+
+
+//3의 배수인 단
+public class P1 {
+
+	public static void main(String[] args) {
+		for(int i =1; i <= 9; i++) {
+			for( int j = 1; j <= 9; j++) {
+				if(( i % 3 ) == 0) {
+				
+					System.out.println(i + "x" + j + "=" + (i * j));
+				}
+			}
+
+		}
+	}
+}
+
+
+6.아래의 별을 찍으시오.
+*****
+*****
+*****
+*****
+
+public class Star1 {
+
+	public static void main(String[] args) {
+		// 별 다섯개 다섯줄
+		for(int i = 1; i <= 5; i++) {
+			
+			for(int j = 1; j <= 5; j++) {
+			System.out.print("*");	
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
+
+7.아래의 별을 찍으시오.
+*
+**
+***
+****
+*****
+
+
+public class MoonStar {
+
+	public static void main(String[] args) {
+		
+		for(int i = 1; i <= 5; i++) {
+		
+			for(int j = 1; j <= i; j++) {
+			
+				System.out.print("*");	
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+8.아래의 별을 찍으시오.
+*****
+****
+***
+**
+*
+
+public class Star {
+
+	public static void main(String[] args) {
+		
+		for(int i = 1; i <= 5; i++) {
+			for(int j = i; j <= 5; j++) {
+				System.out.print("*");	
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+9.아래의 별을 찍으시오.
+    *
+   **
+  ***
+ ****
+*****
+10.아래의 별을 찍으시오.
+*****
+ ****
+  ***
+   **
+    *
+
+11.아래의 별을 찍으시오.
+
+    *
+   ***
+  *****
+ *******
+*********
+
+12. 구구단 에서 2의 배수 이자 3의 배수인 수의 갯수는?
+public class p1 {
+
+	public static void main(String[] args) {
+		
+		int count = 0;
+		
+		for(int i = 1; i <=9; i++) {
+			for(int j = 1; j <=9; j++) {
+				int result = i * j;
+				if(((result % 2) == 0) && ((result % 3) == 0)) {
+					count++;
+				}
+				System.out.println(count);
+		 	}
+	 	}
+	}
+}
+
+
+13.다음과 같이 출력하시오.
+1. Hi
+2. Hi
+3. Hi
+4. Hi
+5. Hi
+
+public class p1 {
+
+	public static void main(String[] args) {
+	for(int i =1; i <=5; i++) {
+		System.out.println(i + "." + "Hi");
+		}
+	}
+}
+
+
+
+
+
+
+14.아래와 같이 출력 하시오.
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5 
+
+public class p1 {
+
+	public static void main(String[] args) {
+		for( int i = 1; i <= 5; i++ ) {
+			for( int j = 1; j <= 5; j++ ) {
+				System.out.print(i);
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+
+
+
+15.아래와 같이 출력 하시오.
+2 3 4 5 6
+3 4 5 6 7
+4 5 6 7 8
+5 6 7 8 9
+6 7 8 9 10
+
+public class p1 {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 5; i++) {
+			for(int j = 1; j <= 5; j++) {
+				System.out.print(i + j); 
+			}
+			System.out.println();
+		}
+		
+	}
+}
