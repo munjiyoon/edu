@@ -1,0 +1,214 @@
+1. 함수는 어떻게 알아 볼수있는가?
+
+함수명 ( )
+함수명 뒤에는 괄호가 있다!
+
+
+2. 함수 호출 하는 법은?
+
+
+
+3. 함수 만드는 법은?
+public static 데이터 타입 함수명 (매개변수) {
+
+}
+
+
+4. 리턴 타입 void 는 어떠한 경우에 쓰는가?
+
+return 할 값이 없는경우에 쓰인다.
+
+
+5. 아래를 함수로 만드시오.
+
+starPrint2(5) 
+
+출력
+*****
+ ****
+  ***
+   **
+    *
+
+5. 아래를 함수로 만드시오.
+
+starPrint3(5) 
+
+출력
+   
+    *   
+   ***
+  *****
+ *******
+*********
+
+
+
+6.아래의 함수를 만드시오 . 	
+
+char grade;
+double avg = 80;
+
+grade = getGrade(avg);
+
+// 우 입니다.
+System.out.println(grade + " 입니다.");
+
+package java_variable;
+
+package java_variable;
+
+public class PP {
+
+	public static void main(String[] args) {
+		char grade;
+		double avg = 80;
+
+		grade = getGrade(avg);
+
+		System.out.println(grade + "입니다");
+	}
+
+	public static char getGrade(double avg) {
+		char grade = '가';
+
+		if (avg >= 90) {
+			grade = '수';
+		} else if (avg >= 80) {
+			grade = '우';
+		} else if (avg >= 70) {
+			grade = '미';
+		} else if (avg >= 60) {
+			grade = '양';
+		} else {
+			grade = '가';
+
+		}
+		
+		return grade;
+	}
+}
+
+
+7.아래의 함수를 만드시오. 
+
+int sum = getHap(1,100);
+//5050
+System.out.println(sum);
+
+public class Hap {
+
+	
+	public static void main(String[] args) {
+		
+		int sum = getHap(1,100);
+		System.out.println(sum);
+	}
+	
+	public static int getHap(int start, int end) {
+		int sum = 0;
+		for(int i = start; i <= end; i++) {
+			sum = sum + i;	
+		}
+		return sum;
+	}
+}
+
+
+int count = get57(1,100);
+//count 는 1부터 100 까지의 숫자중 5의 배수 이자 7의 배수인 수의 갯수
+System.out.println(count );
+
+
+9.아래의 함수를 만드시오. 
+
+printGuGudan(3)// 3단 출력
+printGuGudan(4)// 4단 출력
+
+public class Dan {
+
+	public static void main(String[] args) {
+		printGuGudan(3);
+		printGuGudan(4);
+
+	}
+	public static void printGuGudan(int dan) {
+		for(int i = 1; i <= 9; i++) {
+			System.out.println(dan + "x" + i + "=" + (dan * i));
+		}		
+	}
+}
+
+
+
+
+
+
+10.아래의 함수를 만드시오. 
+
+getRecArea(3,5) //사각형 넓이
+getRecCirlce(5) //원넓이
+getTriangleArea(4 , 5) //삼각형 넓이
+
+public class Method {
+	public static void main(String[] args) {
+		getRecArea(3,5); //사각형 넓이
+		getRecCirlce(5); //원의 넓이
+		getTriangleArea(4 , 5); //삼각형의 넓이	
+	}
+	public static int getRecArea (int w, int h) {
+	
+	int area = w * h;
+	System.out.println(area);
+	return area;
+	}
+	public static double getRecCirlce (double r) {
+	final double PI = 3.14;
+	double area = r * r * PI; 
+	
+	System.out.println(area);
+	return area;
+	}
+	public static int getTriangleArea (int w, int h) {
+	int area = (w * h) / 2 ;
+	System.out.println(area);
+	return area;
+	}
+}
+
+11. 함수로 만들면 좋은점은?
+-같은 작업을(중복) 하지 않기 위해
+-기능이 2번 이상 중복되면 반드시 함수로 만들것.
+
+12.아래의 함수를 만드시오. 
+int month = 4;
+
+getSeason(3)// 봄입니다. 출력
+getSeason(12)// 겨울 입니다. 출력
+
+return값은 void
+switch문으로
+
+public class getSeason {
+
+	public static void main(String[] args) {
+		getSeason(3);   // 봄입니다. 출력
+		getSeason(12);  // 겨울 입니다. 출력
+	}
+	public static void getSeason (int month) {
+		switch (month) {
+		case 1: case 2: case 3: case 4:
+			System.out.println("봄 입니다");
+			break;
+		case 5: case 6: case 7: case 8:
+			System.out.println("여름 입니다");
+			break;
+		case 9: case 10: case 11: case 12:
+			System.out.println("겨울 입니다");
+			break;
+		}
+	}
+}
+
+
+
