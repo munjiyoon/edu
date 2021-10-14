@@ -1,0 +1,166 @@
+
+1. set classpath 에 대하여 설명하시오.
+클래스패스: 자바 가상머신의 클래스 탐색 경로
+
+ set classpath ->  .class의 위치를 알려줌
+
+
+
+2.절대 경로와, 상대경로란?
+절대경로 : 최상위 경로부터 시작하는 경로
+
+3.  cd  . 관 cd .. 의 차이는?
+cd는 change directory의 약자로
+. 자기자신 기준 (*즉 현재폴더)
+.. 한단계 위로 (*한 단계 상위폴더)
+
+
+4.package 에 대하여 설명해 보시오.
+
+클래스이름이 같으면 컴파일 에러가 발생한다
+
+어떻게 해결? 패키지를 만들어서 해결
+
+
+5.정보은닉에 대하여 설명하여 보시오.
+흐음,,
+
+private 값을 다이렉트로 못넣게 최대한 인스턴스 변수에 대한 정보를 숨겨
+함수로만 접근하도록 막는것 (예제로 말하기) 그래서 세터 개터함수를 만들어주는 것이다
+
+정보은닉이란 private라는 문법을 사용하여 
+인스턴스 변수에 대한 정보를 최대한으로 숨겨 값을 다이렉트로 못넣게 막는 것이다
+
+이러면 값을 다이렉트로 넣지 못해 함수로만 접근이 가능한데
+그래서 setter와 getter함수를 이용해 
+실시간으로 발생했던 컴파일에러를 잡아줄 수 있다
+
+
+
+
+6.접근제한자에 대하여 설명하시오.
+접근제한자의 범위는 public > protected >default > private으로
+
+클래스 정의 대상 : public , default
+인스턴스 변수와 메소드 대상: public, protected, default, private
+
+private : 클래스 내부
+default : 동일 패키지
+public : 공공의 젠부~
+
+
+
+7. 지역변수에 접근 제한자가 필요없는 이유는?
+
+지역변수에 접근 제한자가 필요없는 이유는
+지역 변수의 경우 해당 영역(메소드 안)에서 실행이 끝나면 
+메모리 남아있지 않고 없어지는 변수라서 ^^;
+
+
+
+
+8. 아래의 클래스를 구현하시오. 
+Money money = new Money(-126000);
+money.show();
+
+출력 
+잘못된 입력입니다.
+오만원 0장....
+오만원 0장....
+등등등....
+
+class Money{
+
+	private int money;
+	
+	Money(int money){
+	 	
+		setMoney(money);	
+	}		
+	
+	public void setMoney(int money) {
+		
+		if(money < 0) {
+			System.out.println("잘못된 입력입니다");
+			return;
+		}
+		
+		this.money = money;
+	}
+	public void show() {
+		System.out.println("오만원 : " + money/50000+ "장");
+		money = money % 50000;
+		System.out.println("만원 : " + money/10000+ "장");
+		money = money % 10000;
+		System.out.println("오천원 : " + money/5000+ "장");
+		money = money % 5000;
+		System.out.println("천원 : " + money/1000+ "장");
+		money = money % 1000;
+		System.out.println("오백원 : " + money/500+ "장");
+		money = money % 500;
+		System.out.println("백원 : " + money/100+ "장");
+		money = money % 100;
+	}
+	
+}	
+	
+
+
+public class Bill {
+
+	public static void main(String[] args) {
+		Money money = new Money(6000);
+			
+		money.show();
+		
+	}
+
+}
+
+
+
+9.아래의 클래스를 구현하시오.
+Employee employee = new Employee("홍길동", 19, "서울 뉴욕시", "개발 1팀");
+employee.printInfo();
+}
+
+출력:
+이름 : 홍길동
+나이 : 19
+주소 : 서울 뉴욕시
+부서 : 개발 1팀
+
+
+
+10.다음 멤버를 가지고 직사각형을 표현하는 Rectangle 클래스를 작성하라.
+​
+- int 타입의 x, y, width, height 필드 : 사각형을 구성하는 점과 크기 정보
+- x, y, width, height 값을 매개변수로 받아 필드를 초기화하는 생성자
+- int square() : 사각형 넓이 리턴
+- void show() : 사각형의 좌표와 넓이를 화면에 출력
+- boolean contains(Rectangle r) : 매개변수로 받은 r이 현 사각형 안에 있으면 true 리턴 (겹치면 안됨. 완전히 안에 있어야 true)
+- main() 메소드의 코드와 실행 결과는 다음과 같다.
+
+
+public static void main(String args[]) {
+		Rectangle r = new Rectangle(2, 2, 8, 7);
+		Rectangle s = new Rectangle(5, 5, 6, 6);
+		Rectangle t = new Rectangle(1, 1, 10, 10);
+		
+		r.show();
+		System.out.println("s의 면적은 "+s.square());
+		if(t.contains(r)) System.out.println("t는 r을 포함합니다.");
+		if(t.contains(s)) System.out.println("t는 s를 포함합니다.");
+	}
+
+출력:
+(2,2)에서 크기가 8x7인 사각형
+s의 면적은 36
+t는 r을 포함합니다
+
+
+2287 2콤마 2 x와y의 좌표 (10,9)
+
+
+
+
