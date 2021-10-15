@@ -1,0 +1,124 @@
+1. 스택틱 변수의 다른 용어 3가지는?
+공유변수, 클래스 변수, 정적변수
+
+2.스태닉 변수의 접근 방법은?
+
+1. 클래스 내부 접근
+클래스 내부에서 이름을 통한 접근
+class AccessWay {
+	static int num = 0;
+
+	AccessWay(){ incrCnt();}
+	void incrCnt() { //클래스 내부에서 이름을 통한 접근
+		num++;
+	}
+}
+
+
+2. 클래스 외부 접근
+클래스명으로 접근, 객체명으로 접근
+
+
+public class ClassVarAccess {
+
+	public static void main(String[] args) {
+		AccessWay way = new AccessWay(); //객체 생성하자마자 1
+		way.num++; //객체명으로 접근
+		AccessWay.num++;
+		System.out.println("num = " + AccessWay.num); //클래스명으로 접근
+	}
+
+}
+
+//클래스 명으로 접근 가능
+//객체 명으로 접근 가능
+권장사항: 클래스명으로 접근
+
+
+3.스태틱 변수의 활용의 예를 드시오.
+1.PI
+PI를 for문으로 500개를 돌리면 메모리에 500개가 올라가는데
+static변수를 활용하면 메모리에 한개만 올려놓고 공유하기 때문에
+메모리를 절약할 수 있다
+
+EX) PI
+ex) PI  for문  500개 돌린다 생각하면 500개 메모리에 올라가는데
+한개만 올려고 공유해서 ㅁㅔ모리 절약쓰~
+
+EX)카드
+class card{
+   static final int WIDTH = 80;
+   static final int HEIGHT = 120;//카드크기
+   
+   private int num;
+   private String kind;
+}
+
+-> WIDTH와 HEIGHT는 카드의 가로 세로 크기이다
+이건 어느카드이든 가로 세로가 같이 적용된다
+그래서 static을 선언해서 활용할 수 있다
+
+
+EX) 객체 수를 알려주는 프로그램
+
+ class InstCnt {
+	 static int instNum = 0;
+	 
+	 InstCnt(){
+		 instNum++;
+		 System.out.println("인스턴스 생성" +  instNum);		 
+	 }
+ }
+	
+class ClassVar{
+ 	public static void main(String[] args) {
+ 		InstCnt cnt1 = new InstCnt();
+ 		InstCnt cnt2 = new InstCnt();
+ 		InstCnt cnt3 = new InstCnt();
+	}
+}
+
+
+
+4.static 함수에 인스턴스 라면이 올수 없는 이유는?
+                                 (변수, 함수)
+
+static은 객체가 생성되기 전에 메모리가 올라간다
+인스턴스 변수, 함수는 객체가 생성 될 때 메모리에 올라간다
+즉 메모리 생성에 시간차이가 나기 때문에 인스턴스 변수와 인스턴스 함수는 올 수 없다
+
+인스턴스 함수에 static이 올수 있는 이유는?
+static이 메모리에 먼저 올라가 있기 때문에 올 수 있다
+
+보통 스테틱 변수를 다루기 위해 스테틱함수를 만듬
+
+
+5. 아래의 프로그램에서 기존에 값을 다이렉트로 넣었던 부분을 Scanner 로 입력 받아 처리 하시오.
+
+		int math, science, english;
+		math = 90;
+		science = 80; 
+		english = 80;
+
+		Grade me = new Grade(math, science, english);
+		System.out.println("평균은 " + me.average());
+		System.out.println(me.getGrade()); //우 입니다.
+
+
+6.아래의 가위바위보 게임을 짜시오.
+  -난수 발생 함수가 필요 할것입니다. 아래의 메소드를 참고 해 주세요.
+ - (Math.random() * 3 + 1);
+
+출력=======================
+가위, 바위, 보 중 하나를 입력하세요.
+가위
+바위
+졌습니다.
+계속하시겠습니까?(Y/N)
+y
+가위, 바위, 보 중 하나를 입력하세요.
+보
+보
+비겼습니다.
+계속하시겠습니까?(Y/N)
+
