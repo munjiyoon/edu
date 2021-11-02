@@ -1,0 +1,201 @@
+//1. 아래의 결과 값은 false 출력이 된다. true 가 되도록 INum 클래스를 만들고 짜시오.
+
+  INum[] ar1 = new INum[3];
+  INum[] ar2 = new INum[3];
+
+  ar1[0] = new INum(1); ar2[0] = new INum(1);
+  ar1[1] = new INum(2); ar2[1] = new INum(2);
+  ar1[2] = new INum(3); ar2[2] = new INum(3);
+
+  System.out.println(Arrays.equals(ar1, ar2));
+
+
+=>import java.util.Arrays;
+
+class INum {
+	private int num;
+
+	public INum(int num) {
+		this.num = num;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this.num == ((INum) obj).num)
+			return true;
+		else
+			return false;
+	}
+}
+
+public class Test7 {
+
+	public static void main(String[] args) {
+		INum[] ar1 = new INum[3];
+		INum[] ar2 = new INum[3];
+
+		ar1[0] = new INum(1);
+		ar2[0] = new INum(1);
+		ar1[1] = new INum(2);
+		ar2[1] = new INum(2);
+		ar1[2] = new INum(3);
+		ar2[2] = new INum(3);
+
+		System.out.println(Arrays.equals(ar1, ar2));
+
+	}
+}
+
+
+
+2. 아래에서 정렬이 이름 순으로 되게끔 하시오. Person 객체를 만드시오.
+
+
+
+
+
+3.위의 문제에서 사람의 이름 글자 수가 많은 순으로 정렬을 되게끔 person 객체를 만드시오.
+
+=>
+package total;
+
+import java.util.Arrays;
+
+class Person implements Comparable{
+	private String name;
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Person p = (Person) o;
+		return p.name.length() - this.name.length();
+	}
+	@Override
+	public String toString() {
+		return age + ":" + name;
+	}
+	
+}
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		Person[] ar = new Person[3];
+		ar[0] = new Person("Leesa", 29);
+		ar[1] = new Person("Gooddddd", 15);
+		ar[2] = new Person("Soo", 37);
+
+		Arrays.sort(ar);
+		for (Person p : ar)
+			System.out.println(p);
+	}
+
+}
+
+
+
+public class Test7 {
+
+	public static void main(String[] args) {
+		Person5[] ar = new Person5[3];
+		ar[0] = new Person5("Leesa", 29);
+		ar[1] = new Person5("Goo", 15);
+		ar[2] = new Person5("SooBin", 37);
+
+		Arrays.sort(ar);
+		for (Person5 person5 : ar) {
+			System.out.println(person5);
+		}
+	}
+}
+
+
+
+
+
+4.아래의 문자열을 ":" 구분자로 하여, PM 08 45 를 차례로 출력하는 프로그램을 작성 하시오.
+"PM:08:45"
+
+=>
+import java.util.StringTokenizer;
+
+public class Test8 {
+
+	public static void main(String[] args) {
+		StringTokenizer st1 = new StringTokenizer("PM:08:45", ":");
+
+		while (st1.hasMoreElements())
+			System.out.print(st1.nextToken() + ' ');
+		System.out.println();
+
+	}
+}
+
+//4.아래의 문자열을 ":" 구분자로 하여, PM 08 45 를 차례로 출력하는 프로그램을 작성 하시오.
+//   "PM:08:45"
+
+5. 아래를 넓이 순서대로 출력하게끔 하시오.
+      Rectangle[] recArr = {new Rectangle(6, 6),new Rectangle(5, 5),new Rectangle(10, 10),new Rectangle(12, 12),new Rectangle(11, 11)};
+      
+
+	      Arrays.sort(recArr);      
+	    
+	      
+	      for ( Rectangle rec: recArr) {
+	         System.out.println(rec.getArea());
+	      }
+
+=>
+class Rectangle implements Comparable {
+	private int width;
+	private int height;
+	
+
+	public Rectangle(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	public int getArea() {
+		
+		int result = width * height;
+		return result;		
+
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Rectangle rec = (Rectangle) o;
+		
+		return this.getArea() - rec.getArea();
+	}
+
+}
+
+public class Test9 {
+
+	public static void main(String[] args) {
+		Rectangle[] recArr = { new Rectangle(6, 6), new Rectangle(5, 5), new Rectangle(10, 10), new Rectangle(12, 12),
+				new Rectangle(11, 11) };
+
+		Arrays.sort(recArr);
+
+		for (Rectangle rec : recArr) {
+			System.out.println(rec.getArea());
+		}	
+	}
+}
+
+6. html 에서
+아래의 태그를 설명하시오.
+-<br>  줄바꿈
+-<li>   리트스
+-<ol>  순서있는 리스트 
+-<ul> 순서없는 리스트
+
